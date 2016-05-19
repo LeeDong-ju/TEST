@@ -11,10 +11,6 @@ import android.widget.Button;
 
 public class MainActivity extends ActionBarActivity {
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +21,7 @@ public class MainActivity extends ActionBarActivity {
                         Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:010-2475-9007"));
                         startActivity(intent);
                     }
-                }
+                }//류건환
         );
         findViewById(R.id.button2).setOnClickListener(
                 new Button.OnClickListener(){
