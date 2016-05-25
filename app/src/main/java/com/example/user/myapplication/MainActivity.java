@@ -47,10 +47,10 @@ public class MainActivity extends ActionBarActivity {
                     }
                 }
 
-        );//aa
+        );
         findViewById(R.id.button2).setOnClickListener(
                 new Button.OnClickListener(){
-                    //Wifi Scan -
+                    //Wifi Scan - 암호화별 처리
                     public void onClick(View v){
                         wm = (WifiManager) getSystemService(WIFI_SERVICE);
                         wm.startScan();
