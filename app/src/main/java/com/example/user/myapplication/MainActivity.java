@@ -19,12 +19,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
-
+    String test_Wifi = "Ryu's";
+    int len = 0;
     List<ScanResult> scanResult;
     WifiManager wm;
     public void searchWifi() {
         scanResult= wm.getScanResults();
         Toast.makeText(getApplication() ,"wifi scan\nindex 0: "+ scanResult.get(0).SSID+"\nsize: "+scanResult.size(),Toast.LENGTH_LONG).show();
+        len = scanResult.size();
+        connectWifi(test_Wifi);
+    }
+    public void connectWifi(String name){
+
+        for(int i = 0; i<len; i++){
+            if(scanResult.get(i).SSID.equals(name)){
+                Toast.makeText(getApplication(),"==",Toast.LENGTH_LONG).show();
+
+            }
+        }
     }
     private BroadcastReceiver wifiReceiver = new BroadcastReceiver() {
         @Override
@@ -50,7 +62,7 @@ public class MainActivity extends ActionBarActivity {
         );
         findViewById(R.id.button2).setOnClickListener(
                 new Button.OnClickListener(){
-                    //Wifi Scan - 암호화별 처리
+                    //Wifi Scan
                     public void onClick(View v){
                         wm = (WifiManager) getSystemService(WIFI_SERVICE);
                         wm.startScan();
@@ -61,6 +73,7 @@ public class MainActivity extends ActionBarActivity {
                     }
                 }
         );
+
     }
 
     @Override
