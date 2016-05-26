@@ -29,6 +29,7 @@ public class MainActivity extends ActionBarActivity {
         len = scanResult.size();
         connectWifi(test_Wifi);
     }
+
     public void connectWifi(String name){
 
         for(int i = 0; i<len; i++){
