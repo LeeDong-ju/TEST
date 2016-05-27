@@ -30,7 +30,6 @@ public class MainActivity extends ActionBarActivity {
         connectWifi(test_Wifi);
     }
     public void connectWifi(String name){
-
         for(int i = 0; i<len; i++){
             if(scanResult.get(i).SSID.equals(name)){
                 Toast.makeText(getApplication(),"==",Toast.LENGTH_LONG).show();
